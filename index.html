@@ -1,69 +1,103 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <!-- this is for the pwa -->
-    <link rel="manifest" href="js13kpwa.webmanifest">
-    <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Project 2 MCS 275</title>
     <!--This makes sure that there screens are not seen from the start -->
     <style>
       .screen{display:none;}
     </style>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+   
+      
+      
   </head>
   <body>
-    <script src="script.js"></script>
-    <!-- below is the part where the user is the 'home screen' where the user is going to 
-    be given instructions and the button that will allow them to get to the game -->
-    <center>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Circle Hero</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav"> <!--Think of that as your topnav -->
+          <a data-screen="home" class="nav-item nav-link" >Home/Instructions</a>
+          <a data-screen="game" class="nav-item nav-link" >(っ ❛ ͜ʖ ❛ )っGame(っ ❛ ͜ʖ ❛ )っ</a>
+               
+        </div>
+      </div>
+      <!-- the original screens where placed here-->
+    </nav>
+    <!--Here is where I am going to put the screens -->
+    <div id="content">
+
+    <!-- The Home page -->
+      <div class="screen" id="home">
+          <center>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">Circle Hero</h5>
           <h6 class="card-subtitle mb-2 text-muted">Instructions</h6>
             <p class="card-text">You are playing as Circle who is trying to rescue weaker circles
-              from Dr. Evil Triangle. These circles will be around the triangle for you to free. The circles that you take from evil triangle will be tallied on the top leftcorner of the screen. Try to beat your highscore and share this game with your friends and see who has the highest score among you all. What are you waiting for?!! Save them circles!!!!
+              from Dr. Evil Triangle. These circles will be around the triangle for you to free. The circles that you take from evil triangle will be tallied on the top leftcorner of the screen. Try to beat your highscore and share this game with your friends and see who has the highest score among you all. What are you waiting for?!! Save them circles!!!! Go on the Game section to play the game (っ ^ ͜ʖ ^ )っ
             </p>
-            <!-- is the button that will take the user to the screen with the actual game -->
-
-              <button type="button" class="btn btn-outline-primary" a data-screen="game screen" >P L A Y </button>
+            
         </div>
       </div>
     </center>
-
-    <!-- Below is the screen where the game is going to be at, @ the moment I just have a screen that says game data-screen
-    that serves the purpose of checking if button works to send the user on click to the game screen -->
-<!-- game screen -->
-<div class="screen" id="game screen">
-        <center>
-          <div class="card">
-            <div class="card-header">
-              The Home Page 
-            </div>
-              <div class="card-body">
-                <h5 class="card-title">game screen</h5>
-                  <p class="card-text">game screen</p>
-                </div>
-        </div>
-        </center>
       </div>
 
-        <!-- Optional JavaScript; choose one of the two! -->
+      <!--The Search Page -->
+      <div class="screen" id="game">
+      <center>
+    
+            <p class="card-text">Game screen
+            </p>
+      
+    </center>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+      </div>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    -->
+      <!-- The results page -->
+      
+    <!-- End of content -->
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Here is where the typescript is going to be, that makes the screens visible-->
+      <script>
+        // This will make sure that the home screen is always being shown 
+        document.querySelector("#home").style.display= "block";
+
+        let navAnchors= document.querySelectorAll("div#navbarNavAltMarkup a")
+
+        navAnchors.forEach( (anchor) => {
+          anchor.addEventListener("click", (event) => {
+
+            //hides all the screens first
+            document.querySelectorAll(".screen").forEach( (screen) => {
+              screen.style.display = "none";
+            });
+            //read data screen attribute  
+            let screen = event.target.getAttribute("data-screen");
+
+            //find relevant screen
+            let targetScreen= document.querySelector("#" + screen);
+
+            //show it 
+            targetScreen.style.display= "block";
+          })
+        })
+      </script>
+      <!-- This part is for the map screen -->
+      
   </body>
 </html>
