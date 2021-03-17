@@ -51,11 +51,46 @@
     </center>
       </div>
 
-      <!--The Search Page -->
+      <!--The game Page -->
       <div class="screen" id="game">
       <center>
-    
-            <p class="card-text">Game screen
+    <script src="script.js"></script>
+  <!-- getting the canvas set up -->
+  <canvas width="500" height="500"></canvas>
+
+  <script>
+    let c =document.querySelector("canvas");
+    c.style.backgroundColor="silver";
+    let ctx=c.getContext("2d");
+
+    let x= c.width/2;
+    let y= c.height/2;
+    ctx.fillStyle="red";
+
+
+
+    const draw = () => {
+      ctx.clearRect( 0,0, c.width, c.height );
+
+      x -=1;
+
+      if (x<0){
+        x=c.width;
+      }
+
+      ctx.beginPath();
+      ctx.arc(x, y, 30, 0, Math.PI*2);
+      ctx.closePath();
+      ctx.fill();
+
+      window.requestAnimationFrame(draw);
+
+    }
+
+    draw();
+  </script>
+            <p class="card-text">
+              Game screen
             </p>
       
     </center>
