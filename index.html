@@ -14,7 +14,8 @@
       .screen{display:none;}
     </style>
    
-      
+   <link rel="manifest" href="manifest.json">
+
       
   </head>
   <body>
@@ -132,7 +133,24 @@
           })
         })
       </script>
-      <!-- This part is for the map screen -->
-      
+      <!-- this is for the web manifest -->
+<script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+</script>      
+<script>
+  self.addEventListener('install', function(event) {
+  // Perform install steps
+});
+</script>
   </body>
 </html>
