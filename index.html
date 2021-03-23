@@ -54,18 +54,33 @@
 
       <!--The game Page -->
       <div class="screen" id="game">
-      <center>
-    <script src="script.js"></script>
+      
+ 
+
+  <script src="script.js"></script>
   <!-- getting the canvas set up -->
-  <canvas width="500" height="500"></canvas>
+  <canvas width="1000" height="500"></canvas>
 
   <script>
+
+    
     let c =document.querySelector("canvas");
     c.style.backgroundColor="silver";
     let ctx=c.getContext("2d");
+    //dog 
+    let dog =new Image();
+    dog.src="dog.png";
+    let b= Math.floor(Math.random()*501);
+    let f= Math.floor(Math.random()*300);
 
-    let x= c.width/2;
-    let y= c.height/2;
+    //cat
+    let cat=new Image();
+    cat.src="cat.jpg";
+
+    ctx.drawImage(cat, 0,0);//minute 38:54
+
+    let x= 0;
+    let y= 0;
     ctx.fillStyle="red";
 
 
@@ -73,28 +88,39 @@
     const draw = () => {
       ctx.clearRect( 0,0, c.width, c.height );
 
-      x -=1;
+      b -=1;
+      // if (x<0){
+      //   x=c.width;
+      // }
+      ctx.drawImage(cat,x,y);
+      ctx.drawImage(dog,b,f);
 
-      if (x<0){
-        x=c.width;
-      }
+      
+      // ctx.beginPath();
+      // ctx.arc(x, y, 30, 0, Math.PI*2);
+      // ctx.closePath();
+      // ctx.fill();
 
-      ctx.beginPath();
-      ctx.arc(x, y, 30, 0, Math.PI*2);
-      ctx.closePath();
-      ctx.fill();
-
-      window.requestAnimationFrame(draw);
+       window.requestAnimationFrame(draw);
 
     }
 
     draw();
+    document.addEventListener("keydown", (event) => {
+      if (event.keyCode==38){
+        y -=10;
+      } else if (event.keyCode == 40) {
+        y +=10;
+      }
+    
+    ctx.drawImage(cat,0,0);  
+    });
+
   </script>
             <p class="card-text">
               Game screen
             </p>
       
-    </center>
 
       </div>
 
