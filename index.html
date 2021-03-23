@@ -70,14 +70,19 @@
     //dog 
     let dog =new Image();
     dog.src="dog.png";
-    let b= Math.floor(Math.random()*501);
-    let f= Math.floor(Math.random()*300);
+    let b= Math.floor(Math.random()*901);
+    let f= Math.floor(Math.random()*500);
 
     //cat
     let cat=new Image();
     cat.src="cat.jpg";
-
     ctx.drawImage(cat, 0,0);//minute 38:54
+
+    //benefit object
+    let benefit= new Image();
+    benefit.src="benefit.png";
+    let r= Math.floor(Math.random()*801);
+    let g= Math.floor(Math.random()*500);
 
     let x= 0;
     let y= 0;
@@ -89,11 +94,13 @@
       ctx.clearRect( 0,0, c.width, c.height );
 
       b -=1;
+      r -=1;
       // if (x<0){
       //   x=c.width;
       // }
       ctx.drawImage(cat,x,y);
       ctx.drawImage(dog,b,f);
+      ctx.drawImage(benefit,r,g);
 
       
       // ctx.beginPath();
