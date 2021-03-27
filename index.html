@@ -103,15 +103,20 @@
       // if (x<0){
       //   x=c.width;
       // }
+      lives=3
       ctx.drawImage(cat,x,y);
       ctx.drawImage(dog,b,f);
       ctx.drawImage(benefit,r,g);
 
       ctx.font = "30px Arial";
       ctx.strokeText("Lives:", 700, 50);
-      ctx.strokeText("I I I", 700, 100);
+      ctx.strokeText(lives, 700, 100);
       ctx.strokeText("Score:", 700, 150);
       ctx.strokeText("00000", 700, 200);
+      //Below is the function that will print out the game over screen once the user's lives reach zero
+      if (lives==0){
+        ctx.strokeText("GAME OVER", 500, 150);
+      }
 
       // ctx.beginPath();
       // ctx.arc(x, y, 30, 0, Math.PI*2);
